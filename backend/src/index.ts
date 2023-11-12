@@ -10,6 +10,6 @@ app.get('/api/recipes/search', async (req, res) => {
   res.json({ message: 'sucess!!' });
 });
 
-app.listen(5100, () => {
-  console.log('Server running on Port 5100');
+app.listen(5110, () => {
+  console.log('Server running on Port 5110');
 });
