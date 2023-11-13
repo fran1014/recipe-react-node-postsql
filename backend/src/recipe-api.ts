@@ -9,7 +9,11 @@ const searchRecipes = async (searchTerm: string, page: number) => {
 
   try {
     const searchResponse = await fetch(url);
-  } catch (error) {}
+    const resultJson = await searchResponse.json();
+    return resultJson;
+  } catch (error) {
+    console.log(error);
+  }
 
   const queryParams = {
     apiKey,
