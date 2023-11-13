@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import * as RecipeAPI from './recipe-api';
 
 const app = express();
 
