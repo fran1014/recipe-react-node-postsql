@@ -8,7 +8,9 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/api/recipes/search', async (req, res) => {
-  res.json({ message: 'sucess!!' });
+  const searchTerm = req.query.searchTerm as string;
+  const page = parseInt(req.query.page as string);
+  const results = RecipeAPI.searchRecipes(searchTerm, page);
 });
 
 app.listen(4000, () => {
