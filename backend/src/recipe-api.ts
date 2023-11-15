@@ -7,14 +7,6 @@ export const searchRecipes = async (searchTerm: string, page: number) => {
 
   const url = new URL('https://api.spoonacular.com/recipes/complexSearch');
 
-  try {
-    const searchResponse = await fetch(url);
-    const resultJson = await searchResponse.json();
-    return resultJson;
-  } catch (error) {
-    console.log(error);
-  }
-
   const queryParams = {
     apiKey,
     query: searchTerm,
@@ -23,4 +15,12 @@ export const searchRecipes = async (searchTerm: string, page: number) => {
   };
 
   url.search = new URLSearchParams(queryParams).toString();
+
+  try {
+    const searchResponse = await fetch(url);
+    const resultJson = await searchResponse.json();
+    return resultJson;
+  } catch (error) {
+    console.log(error);
+  }
 };
